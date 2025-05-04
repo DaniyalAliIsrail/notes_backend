@@ -25,6 +25,10 @@ app.use('/api/auth',authRoutes)
 // post create routes
 app.use('/api/post',postRoutes)
 
+app.get('/', (req, res) => {
+    res.send('API is running...');
+  });
+  
 // error handling middleware
 app.use((err,req,res,next)=>{
     const statuscode = err.statuscode || 500;
