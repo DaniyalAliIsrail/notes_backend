@@ -11,9 +11,9 @@ dotenv.config();
 const app = express(); 
 const PORT = process.env.PORT || 4000;
 app.use(cors({
-    origin: ["https://resplendent-nougat-00122f.netlify.app", "http://localhost:5173"],
-    credentials: true,
-}));
+    origin: 'https://resplendent-nougat-00122f.netlify.app', // ya '*' in dev
+    credentials: true
+  }));
 
 
 app.use(express.json()) // client say any wala json data automatic parse krta hay or javascript obj may convert krta hay
