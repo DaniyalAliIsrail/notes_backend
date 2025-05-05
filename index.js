@@ -40,11 +40,22 @@ app.use((err,req,res,next)=>{
     })
 })
  
-mongoose.connect(process.env.DB_URI).then(()=>{
+// mongoose.connect(process.env.DB_URI).then(()=>{
+//     console.log("DATABASE CONNECTED");
+// }).catch((err)=>{
+//     (console.log("error",err));
+// })
+
+mongoose.connect(process.env.DB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 15000, // Increase from default 30s to 15s
+    socketTimeoutMS: 45000, // Increase socket timeout
+  }).then(() => {
     console.log("DATABASE CONNECTED");
-}).catch((err)=>{
-    (console.log("error",err));
-})
+  }).catch((err) => {
+    console.log("MongoDB Connection Error:", err);
+  });
 
 // app.listen(PORT,()=>{
 //     console.log(`server is running on post ${PORT}`);
