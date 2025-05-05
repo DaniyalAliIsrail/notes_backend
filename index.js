@@ -11,13 +11,12 @@ dotenv.config();
 const app = express(); 
 const PORT = process.env.PORT || 4000;
 app.use(cors({
-    origin: 'https://resplendent-nougat-00122f.netlify.app', // ya '*' in dev
+    origin: 'https://notes-book-task-frontend-temp.vercel.app', // ya '*' in dev
     credentials: true
   }));
 
 
 app.use(express.json()) // client say any wala json data automatic parse krta hay or javascript obj may convert krta hay
-
 app.use(cookieParser()) // middleware for cookie parsing
 // middleware for user routes
 app.use('/api/user',userRoutes)
