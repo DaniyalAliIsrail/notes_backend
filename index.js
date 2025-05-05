@@ -9,7 +9,7 @@ import cors from 'cors';
 dotenv.config();
 
 const app = express(); 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 app.use(cors({
     origin: ["https://resplendent-nougat-00122f.netlify.app", "http://localhost:5173"],
     credentials: true,
