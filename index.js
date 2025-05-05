@@ -47,6 +47,7 @@ mongoose.connect(process.env.DB_URI).then(()=>{
     (console.log("error",err));
 })
 
-app.listen(PORT,()=>{
-    console.log(`server is running on post ${PORT}`);
-});
+// app.listen(PORT,()=>{
+//     console.log(`server is running on post ${PORT}`);
+// });
+export default app;
