@@ -11,7 +11,7 @@ dotenv.config();
 const app = express(); 
 const PORT = 4000;
 app.use(cors({
-    origin: "http://localhost:5173", // ✅ Allow frontend requests
+    origin:"https://resplendent-nougat-00122f.netlify.app"||"http://localhost:5173",
     credentials: true, // ✅ Allow cookies if needed
 }));
 
